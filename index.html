@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <webview id="webview" src="https://github.com/dskrenta" style="display:inline-flex; width:640px; height:480px;"></webview>
+  </body>
+  <script>
+    onload = ()=> {
+      const webview = document.getElementById('webview');
+
+      const handleSample = ()=> {
+        return;
+      }  
+
+      webview.addEventListener('did-start-loading', handleSample);
+    }
+  </script>
+</html>
