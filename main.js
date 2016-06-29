@@ -8,6 +8,13 @@ const BrowserWindow = electron.BrowserWindow
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
+/*
+  TODO: import config.js into main.js
+  use config variables to change environment before start webview
+  pass config object with IPC to render process to configure the webview portion
+  add webpack to build the bundle
+*/
+
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
