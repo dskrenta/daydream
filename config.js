@@ -8,3 +8,5 @@ const config = {
   'viewportHeight': 768,
   'waitBetweenSlides': 5000 // 5 seconds
 };
+
+module.exports = config;
