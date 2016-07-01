@@ -8,42 +8,12 @@
     <webview id="webview" src="https://github.com/dskrenta" style="display:inline-flex; width:640px; height:480px;"></webview>
   </body>
   <script src="config.js"></script>
+  <script src="events.js"></script>
   <script>
     onload = ()=> {
       const webview = document.getElementById('webview');
 
-      const handleSample = ()=> {
-        return;
-      }
-
-      const navigation  = (event)=> {
-        // check if host is host from config file or default topix host
-        // throw error if event.url is not topix url
-        // automatically take screenshot and title properly
-      }
-
-      webview.addEventListener('load-commit');
-      webview.addEventListener('did-finish-load');
-      webview.addEventListener('did-fail-load');
-      webview.addEventListener('did-frame-finish-load');
-      webview.addEventListener('did-start-loading');
-      webview.addEventListener('did-stop-loading');
-      webview.addEventListener('did-get-response-details');
-      webview.addEventListener('did-get-redirect-request');
-      webview.addEventListener('dom-ready');
-      webview.addEventListener('console-message');
-      webview.addEventListener('new-window');
-
-      webview.addEventListener('will-navigate', navigation);
-      webview.addEventListener('did-navigate', navigation);
-      webview.addEventListener('did-navigate-in-page', navigation);
-
-      webview.addEventListener('close');
-      webview.addEventListener('crashed');
-      webview.addEventListener('gpu-crashed');
-      webview.addEventListener('destroyed');
-      webview.addEventListener('media-started-playing');
-      webview.addEventListener('did-stop-loading');
+      eventListeners();
     }
   </script>
 </html>
