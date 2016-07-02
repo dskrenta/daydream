@@ -14,8 +14,18 @@ let mainWindow;
 */
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: config.viewportWidth, height: config.viewportHeigh  });
+  if(config.mazimizeWindow === true) {
+    mainWindow = new BrowserWindow();
+    mainWindow.maximize();
+  } else if(config.maximizeWindow === false) {
+    mainWindow = new BrowserWindow({width: config.windowWidth, height: config.windowHeight});
+  } else {
+    mainWindow = new BrowserWindow();
+  }
   mainWindow.loadURL(`file://${__dirname}/index.html`);
+  mainWindow.webContents.on('did-finish-load', ()=> {
+    mainWindow.webContents.send('config', JSON.stringify(config));
+  });
   mainWindow.webContents.openDevTools()
   mainWindow.on('closed', function () {
     mainWindow = null;

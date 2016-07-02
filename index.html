@@ -12,6 +12,11 @@
   <script src="actions.js"></script>
   <script>
     onload = ()=> {
+      require('electron').ipcRenderer.on('config', (event, message) => {
+        console.log(message);  // Prints "whoooooooh!"
+        window.config = JSON.parse(message);
+      });
+
       const webview = document.getElementById('webview');
 
       eventListeners();
