@@ -14,7 +14,7 @@ let mainWindow;
 */
 
 function createWindow () {
-  if(config.mazimizeWindow === true) {
+  if(config.maximizeWindow === true) {
     mainWindow = new BrowserWindow();
     mainWindow.maximize();
   } else if(config.maximizeWindow === false) {
