@@ -1,24 +1,22 @@
 function click(webview, selector) {
-  let code = `
-  let element = document.getElementById(selector);
-  element.click(); `;
+  let code = `document.getElementById(${selector}).click();`;
 
-  webview.executeJavascript(code, false, (result)=> {
+  webview.executeJavaScript(code, false, (result)=> {
     console.log(result);
   });
 }
 
 function wait(webview, selector) {
   let code = `
-  if(typeof input === 'number') {
+  if(typeof ${input} === 'number') {
     // wait ms
-  } else if(typeof input === 'string') {
+  } else if(typeof ${input} === 'string') {
     // selector
   } else {
     // error
   } `;
 
-  webview.executeJavascript(code, false, (result)=> {
+  webview.executeJavaScript(code, false, (result)=> {
     console.log(result);
   });
 }

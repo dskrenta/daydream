@@ -9,17 +9,14 @@
   </body>
   <script src="config.js"></script>
   <script src="events.js"></script>
-  <script src="actions.js"></script>
+  <!--<script src="actions.js"></script>-->
+  <script src="start.js"></script>
   <script>
     onload = ()=> {
       require('electron').ipcRenderer.on('config', (event, message) => {
-        console.log(message);  // Prints "whoooooooh!"
-        window.config = JSON.parse(message);
+        console.log(message);
+        start(JSON.parse(message));
       });
-
-      const webview = document.getElementById('webview');
-
-      eventListeners();
     }
   </script>
 </html>
