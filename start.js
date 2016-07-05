@@ -7,13 +7,3 @@ function start(config) {
 
   //eventListeners();
 }
-
-function click(webview, selector) {
-  let code = `
-  let element = document.getElementById(${selector});
-  element.click(); `;
-
-  webview.executeJavaScript(code, false, (result)=> {
-    console.log(result);
-  });
-}

@@ -1,5 +1,5 @@
 function click(webview, selector) {
-  let code = `document.getElementById(${selector}).click();`;
+  let code = `document.querySelector('${selector}').click();`;
 
   webview.executeJavaScript(code, false, (result)=> {
     console.log(result);
