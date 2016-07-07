@@ -14,18 +14,21 @@
   </head>
   <body>
     <div style="width:100%; height:100%">
-      <webview id="webview" src="http://harvix.com" style="min-width:900px; min-height:600px" autosize="on"></webview>
+      <webview id="webview" src="http://stars.topix.com/slideshow/16438/slide1?no_cover=1" style="min-width:900px; min-height:600px" autosize="on"></webview>
     </div>
   </body>
-  <script src="config.js"></script>
-  <script src="events.js"></script>
-  <script src="actions.js"></script>
-  <script src="start.js"></script>
+  <!--<script src="config.js"></script>-->
+  <!--<script src="events.js"></script>-->
+  <!--<script src="actions.js"></script>-->
+  <!--<script src="start.js"></script>-->
+  <script src="daydream.js"></script>
   <script>
     onload = ()=> {
       require('electron').ipcRenderer.on('config', (event, message) => {
         console.log(message);
-        start(JSON.parse(message));
+        var daydream = new DayDream();
+        daydream.wait(5000);
+        daydream.click('.js-next');
       });
     }
   </script>
